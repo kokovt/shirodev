@@ -1,0 +1,24 @@
+@font-face {
+    font-family: PixelMPlus;
+    src: url("../ttf/PixelMplus12-Regular.ttf");
+}
+
+@font-face {
+    font-family: PixelMPlus;
+    src: url("../ttf/PixelMplus12-Bold.ttf");
+    font-weight: bold;
+}
+
+
+#gravatar {
+    border-radius: 50%;
+}
+
+
+#header {
+    display: flex;
+    align-items: first;
+    justify-content: left;
+    flex-direction: row;
+    font-family: PixelMPlus;
+}
