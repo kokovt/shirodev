@@ -6,6 +6,28 @@
  * License, or (at your option) any later version.
  */
 
+//? Dark or light mode toggles
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #000000;
+    --text: #ffebf5;
+    --gradient-background-2: rgb(80, 3, 3);
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+    --bg: #FF69B4;
+    --gradient-background-2: #57062c;
+    --text: #000000;
+}
+
+// Functions
+
+//? Changes text color based on the theme
+@mixin text-color {
+    color: --text;
+}
+
 @font-face {
     font-family: PixelMPlus;
     src: url("../ttf/PixelMplus12-Regular.ttf");
@@ -17,16 +39,204 @@
     font-weight: bold;
 }
 
-
-#gravatar {
-    border-radius: 50%;
+body {
+    background: var(--bg);
+    background: linear-gradient(210deg, var(--bg) 0%, var(--bg) 10%, var(--gradient-background-2) 100%);   padding: 0vw;
+    margin: 0vw;
+    height: 100vh;
 }
 
+// ID's
+#gravatar {
+    border-radius: 50%;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+}
 
+// Make the items
 #header {
     display: flex;
     align-items: first;
-    justify-content: left;
+    justify-content: space-between;
     flex-direction: row;
-    font-family: PixelMPlus;
+}
+
+#header-title {
+    text-decoration: none;
+    @include text-color;
+}
+
+#home-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 1vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1vw;
+
+
+    // Make the items inside the button have padding on the top and bottom
+    * {
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1vw;
+        font-family: PixelMPlus;
+        @include text-color;
+    }
+}
+
+
+.header-left {
+    margin-left: 3vw;
+}
+
+// Style Toggle
+.switch_box{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 200px;
+	min-width: 200px;
+	height: 200px;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+}
+
+.box_3{
+	background: #19232b;
+}
+
+// Position the toggle switch container on the right side of the header
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6.5vh;
+  margin-right: 3vw;
+}
+
+.toggle_switch{
+  width: 100px;
+  height: 45px;
+  position: relative;
+}
+
+input[type="checkbox"].switch_3{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  outline: 0;
+  z-index: 1;
+}
+
+svg.checkbox .outer-ring{
+  stroke-dasharray: 375;
+  stroke-dashoffset: 375;
+  -webkit-animation: resetRing .35s ease-in-out forwards;
+          animation: resetRing .35s ease-in-out forwards;
+}
+
+input[type="checkbox"].switch_3:checked + svg.checkbox .outer-ring{
+  -webkit-animation: animateRing .35s ease-in-out forwards;
+          animation: animateRing .35s ease-in-out forwards;
+}
+
+input[type="checkbox"].switch_3:checked + svg.checkbox .is_checked{
+  opacity: 1;
+  -webkit-transform: translateX(0) rotate(0deg);
+          transform: translateX(0) rotate(0deg);
+}
+
+input[type="checkbox"].switch_3:checked + svg.checkbox .is_unchecked{
+  opacity: 0;
+  -webkit-transform: translateX(-200%) rotate(180deg);
+          transform: translateX(-200%) rotate(180deg);
+}
+
+
+svg.checkbox{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+svg.checkbox .is_checked{
+  opacity: 0;
+  fill: yellow;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: translateX(200%) rotate(45deg);
+          transform: translateX(200%) rotate(45deg);
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+
+svg.checkbox .is_unchecked{
+  opacity: 1;
+  fill: #fff;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: translateX(0) rotate(0deg);
+          transform: translateX(0) rotate(0deg);
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+
+@-webkit-keyframes animateRing{
+  to{
+    stroke-dashoffset: 0;
+    stroke: yellow;
+  }
+}
+
+@keyframes animateRing{
+  to{
+    stroke-dashoffset: 0;
+    stroke: yellow;
+  }
+}
+
+@-webkit-keyframes resetRing{
+  to{
+    stroke-dashoffset: 0;
+    stroke: #ffffff;
+  }
+}
+
+@keyframes resetRing{
+  to{
+    stroke-dashoffset: 0;
+    stroke: #ffffff;
+  }
 }
