@@ -27,23 +27,17 @@ fetch("./header.html").then(response => {
     header.innerHTML = html;
     document.body.insertBefore(header, document.body.firstChild);
 
-
-    // Import crypto-js script
-    const cryptoJsScript = document.createElement("script");
-    cryptoJsScript.src = "https://cdn.jsdelivr.net/npm/crypto-js@4.2.0/crypto-js.min.js";
-    document.body.appendChild(cryptoJsScript);
+    // Import toggle theme script
+    const toggleThemeScript = document.createElement("script");
+    toggleThemeScript.src = "./dist/toggle-theme.js";
+    toggleThemeScript.type = "module";
+    document.body.appendChild(toggleThemeScript);
 
     // Import gravatar script
     const gravatarScript = document.createElement("script");
     gravatarScript.src = "./dist/gravatar.js";
     gravatarScript.type = "module";
     document.body.appendChild(gravatarScript);
-
-    // Import toggle theme script
-    const toggleThemeScript = document.createElement("script");
-    toggleThemeScript.src = "./dist/toggle-theme.js";
-    toggleThemeScript.type = "module";
-    document.body.appendChild(toggleThemeScript);
 
 }).catch(error => {
     console.error("Error importing header:", error);
