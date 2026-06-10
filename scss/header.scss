@@ -1,0 +1,142 @@
+/**
+ * shirodev.dev - my personal website
+ * Copyright (c) 2026 Shiro.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+//? Dark or light mode toggles
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #000000;
+    --text: #ffebf5;
+    --gradient-background-2: rgb(80, 3, 3);
+    --invert: 1;
+  }
+  
+  html[data-theme="light"] {
+    color-scheme: light;
+    --bg: #ffcee3;
+    --gradient-background-2: var(--bg);
+    --text: #000000;
+    --invert: 0;
+  }
+  
+
+
+@mixin text-color {
+    color: --text;
+}
+
+#header {
+    display: flex;
+    align-items: first;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#header-title {
+    text-decoration: none;
+    @include text-color;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1vw;
+    font-family: PixelMPlus;
+
+    // Put the items in a row
+    .center-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 0.5vw;
+
+        .center-icon {
+            filter: invert(var(--invert));
+        }
+
+        h1 {
+            font-family: PixelMPlus;
+        }
+    }
+
+    .center-button:hover {
+        text-decoration: underline;
+    }
+}
+
+.header-left {
+    margin-left: 3vw;
+}
+
+// Position the toggle switch container on the right side of the header
+// items vertically
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1vw;
+    margin-right: 3vw;
+}
+
+// ID's
+#gravatar {
+    border-radius: 50%;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+}
+
+// Make the items
+
+
+
+#home-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 1vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1vw;
+
+
+    // Make the items inside the button have padding on the top and bottom
+    * {
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1vw;
+        font-family: PixelMPlus;
+        @include text-color;
+    }
+}
