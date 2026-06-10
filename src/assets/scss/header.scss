@@ -1,0 +1,89 @@
+@use  './font_import.scss' as *;
+@use './theme_toggle.scss' as *;
+
+// Dark and light mode themes.
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --text: #ffebf5;
+    --invert: 1;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+    --text: #000000;
+    --invert: 0;
+}
+
+// Header Styles
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1vw;
+    margin-left: 3vw;
+    margin-top: 1vh;
+    
+
+    :hover {
+        cursor: pointer;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 4vw;
+    }
+
+    h1 {
+        font-family: PixelMPlus;
+        font-size: clamp(1.5vw, .5rem, 2rem);
+        font-weight: bold;
+        color: var(--text);
+    }
+}
+
+
+.header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4vw;
+    margin-top: 1vh;
+
+    h1 {
+        font-family: PixelMPlus;
+        font-size: clamp(1.5vw, .5rem, 2rem);
+        font-weight: bold;
+        color: var(--text); 
+
+        a {
+            text-decoration: none;
+            color: var(--text);
+        }
+        :hover {
+            text-decoration: underline 3px solid var(--text);
+        }
+
+        .header-icon {
+            width: clamp(1.5vw, .5rem, 2rem);;
+            height: clamp(1.5vw, .5rem, 2rem);;
+            margin-right: .5vw;
+        }
+    }
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3vw;
+    margin-top: 1vh;
+}

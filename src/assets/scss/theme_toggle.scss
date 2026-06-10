@@ -14,15 +14,18 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
+*/
+
+
 
 .toggle_switch {
-    width: 100px;
-    height: 45px;
+    --toggle-size: clamp(5vw, 2rem, 16rem);
+    width: var(--toggle-size);
+    height: var(--toggle-size);
     position: relative;
 }
 
-input[type="checkbox"].switch_3 {
+input[type="checkbox"].switch {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -45,18 +48,18 @@ svg.checkbox .outer-ring {
     animation: resetRing .35s ease-in-out forwards;
 }
 
-input[type="checkbox"].switch_3:checked+svg.checkbox .outer-ring {
+input[type="checkbox"].switch:checked+svg.checkbox .outer-ring {
     -webkit-animation: animateRing .35s ease-in-out forwards;
     animation: animateRing .35s ease-in-out forwards;
 }
 
-input[type="checkbox"].switch_3:checked+svg.checkbox .is_checked {
+input[type="checkbox"].switch:checked+svg.checkbox .is_checked {
     opacity: 1;
     -webkit-transform: translateX(0) rotate(0deg);
     transform: translateX(0) rotate(0deg);
 }
 
-input[type="checkbox"].switch_3:checked+svg.checkbox .is_unchecked {
+input[type="checkbox"].switch:checked+svg.checkbox .is_unchecked {
     opacity: 0;
     -webkit-transform: translateX(-200%) rotate(180deg);
     transform: translateX(-200%) rotate(180deg);
