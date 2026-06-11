@@ -16,14 +16,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@font-face {
-    font-family: PixelMPlus;
-    src: url('../ttf/PixelMplus12-Regular.ttf') format('truetype');
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: PixelMPlus;
-    src: url('../ttf/PixelMplus12-Bold.ttf') format('truetype');
-    font-weight: bold;
+export default function Footer() {
+    return (
+        <div>Im a footer!!</div>
+    )
 }

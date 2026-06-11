@@ -16,14 +16,23 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@font-face {
-    font-family: PixelMPlus;
-    src: url('../ttf/PixelMplus12-Regular.ttf') format('truetype');
-    font-weight: normal;
+export const GRAVATAR_HASH = '99a35110230044ee5eac0882a6fe3bea';
+
+function gravatarUrl(size = 200): string {
+    return `https://www.gravatar.com/avatar/${GRAVATAR_HASH}?s=${size}&d=mp`;
 }
 
-@font-face {
-    font-family: PixelMPlus;
-    src: url('../ttf/PixelMplus12-Bold.ttf') format('truetype');
-    font-weight: bold;
+interface GravatarProps {
+    size?: number;
+    className?: string;
+}
+
+export default function Gravatar({ size = 200, className }: GravatarProps) {
+    return (
+        <img src={gravatarUrl(size)}
+        className={className}
+        alt="Shiro"
+        width={size}
+        height={size}/>
+    )
 }

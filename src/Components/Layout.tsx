@@ -16,14 +16,19 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@font-face {
-    font-family: PixelMPlus;
-    src: url('../ttf/PixelMplus12-Regular.ttf') format('truetype');
-    font-weight: normal;
-}
+import { Outlet } from 'react-router-dom';
 
-@font-face {
-    font-family: PixelMPlus;
-    src: url('../ttf/PixelMplus12-Bold.ttf') format('truetype');
-    font-weight: bold;
+import Header from "./Header";
+import Footer from "./Footer";
+
+export default function Layout() {
+    return (
+        <div className="layout">
+            <Header />
+            <main className="layout-main">
+                <Outlet />
+            </main>
+            <Footer />
+        </div>
+    )
 }

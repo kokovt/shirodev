@@ -1,8 +1,35 @@
-import Header from './header/header';
-import './assets/scss/index.scss';
+/**
+ * shirodev.dev - my personal website
+ * Copyright (c) 2026 Shiro.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './Components/Layout';
+import HomePage from './pages/Home';
+
+import './assets/scss/home.scss';
 
 export default function App() {
-  return <div>
-        <Header />
-    </div>
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path="/" element={<HomePage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
