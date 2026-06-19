@@ -17,7 +17,10 @@
  */
 
 export default function Footer() {
-    return (
-        <div>Im a footer!!</div>
-    )
+  return (
+    <div>
+      <p>Profile picture by <a href="https://x.com/nec02k">nec02k</a> · Banner by <a href="https://www.reddit.com/r/NeedyStreamerOverload/comments/1h90dvw/made_an_ame_discord_banner_for_myself_3/">Skytiger456</a></p>
+      <p>© 2026 Shiro · <a href="https://codeberg.org/shirodev/shirodev.dev">source</a></p>
+    </div>
+  )
 }
