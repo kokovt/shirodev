@@ -28,9 +28,9 @@ export default function Home() {
         <Gravatar size={96} className="gravatar"></Gravatar>
         <div className="infoHolder">
           <h1>Shiro</h1>
-          <p className="names">Also found as Onyx/Kokabiel</p>
-          <p className="pronouns">She/Her</p>
-          <a className="quote" href="https://music.youtube.com/watch?v=luli3FTWDSI&si=YutKK-R2G8fbBfS6" target="_blank"><p className="Song quote">"I'd say I'm sorry, but I'm never gonna let go" - IDKHow, Downside</p></a>
+          <p className="names">also found as Onyx/Kokabiel</p>
+          <p className="pronouns">she/her</p>
+          <a className="quote" href="https://music.youtube.com/watch?v=luli3FTWDSI&si=YutKK-R2G8fbBfS6" target="_blank"><p className="Song quote">"I'd say I'm sorry, but I'm never gonna let go"</p></a>
         </div>
       </section>
 
