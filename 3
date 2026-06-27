@@ -17,7 +17,7 @@
  */
 import banner from "../assets/images/ame banner.gif";
 import Gravatar from "../Components/Gravatar";
-import NSOS_EXAMPLE from "../assets/images/NSOS.png";
+
 export default function Home() {
   return (
     <div className="homePage">
@@ -105,46 +105,42 @@ export default function Home() {
       <section className="featuredProject">
         <h2>Featured Project</h2>
         <h3>NSOS</h3>
-        <div className="NSOSHolder">
-          <div>
-            <p>
-              NSOS is a Needy Streamer Overload inspired operating system, meant
-              to replicate the Operating system "Windose 20" in Needy Streamer
-              Overload. It has early WIP support for Raspberry PI boards, x86_64
-              support, and limited framebuffer output (drawing text from a raw
-              bitmap, drawing shapes and lines, and UART). <br />
-              <br />
-              <i>
-                Neither Me, nor any of my projects are affiliated with WSS
-                playground, Alliance Arts, or Microsoft in any sort of way.
-              </i>
-            </p>
+        <p>
+          NSOS is a Needy Streamer Overload inspired operating system, meant to
+          replicate the Operating system "Windose 20" in Needy Streamer
+          Overload. It has early WIP support for Raspberry PI boards, x86_64
+          support, and limited framebuffer output (drawing text from a raw
+          bitmap, drawing shapes and lines, and UART). <br />
+          <br />
+          <i>
+            Neither Me, nor any of my projects are affiliated with WSS
+            playground, Alliance Arts, or Microsoft in any sort of way.
+          </i>
+        </p>
 
-            <div className="info">
-              <img src="https://img.shields.io/badge/-A8B9CC?style-for-the-badge&amp;logo=c&amp;logoColor=white" />
-              <img src="https://img.shields.io/badge/-007ACC?style-for-the-badge&amp;logo=assemblyscript&amp;logoColor=white" />
-              <img src="https://img.shields.io/badge/&copy;-AGPLv3.0-blue" />
-            </div>
-          </div>
-
-          <img src={NSOS_EXAMPLE} className="NSOSExample" />
+        <div className="info">
+          <img src="https://img.shields.io/badge/-A8B9CC?style-for-the-badge&amp;logo=c&amp;logoColor=white" />
+          <img src="https://img.shields.io/badge/-007ACC?style-for-the-badge&amp;logo=assemblyscript&amp;logoColor=white" />
+          <img src="https://img.shields.io/badge/©-AGPL-v3.0" />
+          <span className="licensespan">AGPL-3.0</span>
         </div>
-
-        <div className="info"></div>
         <a href="./projects">View all projects &rarr;</a>
       </section>
 
       <section className="contact">
         <h2>Contact</h2>
         <div>
-          <img src="https://img.shields.io/badge/@__kokovt-000000?style-for-the-badge&amp;logo=x&amp;logoColor=white" />
-          <img src="https://img.shields.io/badge/@__shirodev-000000?style-for-the-badge&amp;logo=x&amp;logoColor=white" />
-          <img src="https://img.shields.io/badge/shirodev-000000?style-for-the-badge&amp;logo=codeberg&amp;logoColor=white" />
-          <img src="https://img.shields.io/badge/shiro@shirodev.dev-000000?style-for-the-badge&amp;logo=gmail&amp;logoColor=white" />
-          <br />
-          <span className="emailResponse">
-            Responses will come from a seperate email.
-          </span>
+          <h3>X</h3>
+          <p>@_shirodev</p>
+        </div>
+        <div>
+          <h3>Codeberg</h3>
+          <p>shirodev</p>
+        </div>
+        <div>
+          <h3>Email</h3>
+          <p>shiro@shirodev.dev</p>
+          <span>Responses will come from a seperate email.</span>
         </div>
       </section>
       <hr />
